@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+  <title>My Recipes</title>
+</head>
+<body>
+    
+<div class="container-fluid">
+<h1 class="display-2"><%= rec.title %></h1> 
+<table>
+    <td class="text-center"><img src="<%= rec.image %>" width="300" height="auto"></td>
+    <td class="text-center">
+        <strong> Ingredients:</strong>
+                    <ul>
+                        <% ing.forEach(function(ing) { %>
+                            <li>
+                                <strong><%= ing.name %></strong>
+                                <%= ing.amount.toFixed(2) %>
+                                <%= ing.unit %>
+                            </li>
+                        <% }); %>
+                    </ul>
+    </td>
+</table>
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="display-4">Summary:</h2> 
+        <p class="mb-2 mt-2"><%- rec.summary -%></p>
+    </div> 
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="display-4">Instructions:</h2> 
+        <p class="mb-2 mt-2"><%- rec.instructions -%></p>
+    </div> 
+</div>
+        
+            
+        
+        
+         
+        
+       
+        
+</div>
+</body>
+</html>
